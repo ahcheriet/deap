@@ -64,7 +64,7 @@ and have a :attr:`fitness` attribute.
 .. literalinclude:: /code/tutorials/part_2/2_2_1_list_of_floats.py
    :lines: 2,5-18
 
-The newly introduced :meth:`~deap.base.Toolbox.register` method takes at least two arguments; an alias and a function assigned to this alias. Any subsequent argument is passed to the function when called (à la :func:`functools.partial`).
+The newly introduced :meth:`~deap.base.Toolbox.register` method takes at least two arguments; an alias and a function assigned to this alias. Any subsequent argument is passed to the function when called (to the:func:`functools.partial`).
 Thus, the preceding code creates two aliases in the toolbox; ``attr_float`` and ``individual``. The first one redirects to the :func:`random.random` function. The second one is a shortcut to the :func:`~deap.tools.initRepeat` function, fixing its :data:`container` argument to the :class:`creator.Individual` class, its :data:`func` argument to the :func:`toolbox.attr_float` function, and its number of repetitions argument to ``IND_SIZE``.
 
 Now, calling :func:`toolbox.individual` will call :func:`~deap.tools.initRepeat` with the fixed arguments and return a complete :class:`creator.Individual`
